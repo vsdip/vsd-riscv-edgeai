@@ -1,13 +1,10 @@
 {
-  "name": "RISC-V Edge AI Workshop",
+  "name": "VSD RISC-V EdgeAI Codespace",
   "build": { "dockerfile": "Dockerfile" },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": { "version": "latest" }
-  },
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
-      "label": "noVNC RISCV EDGE AI Desktop",
+      "label": "noVNC Desktop",
       "onAutoForward": "openBrowser"
     }
   },
