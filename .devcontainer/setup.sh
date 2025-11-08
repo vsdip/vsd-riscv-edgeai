@@ -25,4 +25,4 @@ echo "[setup] Cleaning up..."
 rm -f "$ARCHIVE"
 
 chown -R vscode:vscode "$DESKTOP"
-echo "[setup] FreedomStudio ready on Desktop."
+echo "[VSD RISCV EDGE AI CODESPACE setup] FreedomStudio ready on Desktop."
