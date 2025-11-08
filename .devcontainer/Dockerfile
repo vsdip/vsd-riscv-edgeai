@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tcl tcl-dev tk tk-dev libcairo2-dev libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev \
     libx11-dev libxext-dev libxrender-dev libxpm-dev libxaw7-dev libfontconfig1-dev \
     libreadline-dev libncurses-dev flex bison gawk tcsh \
-    python3 python3-pip python3-venv pkg-config curl ca-certificates wget \
+    python3 python3-pip python3-venv pkg-config curl ca-certificates wget libwebkit2gtk-4.0-dev \
     xfce4 xfce4-terminal x11vnc xvfb novnc websockify supervisor dbus-x11 gedit vim \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
