@@ -5,24 +5,28 @@ DESKTOP="/home/vscode/Desktop"
 URL="https://vsd-labs.sgp1.cdn.digitaloceanspaces.com/vsd-labs/FreedomStudio-3-1-1_codespace.tar.gz"
 ARCHIVE="${DESKTOP}/FreedomStudio-3-1-1_codespace.tar.gz"
 
-echo "[setup] Preparing Desktop..."
+echo "[setup] Ensuring Desktop exists and is writable..."
 mkdir -p "$DESKTOP"
 chown -R vscode:vscode "$DESKTOP"
 
-# Skip if already extracted
+# Idempotency: if a FreedomStudio directory already exists, skip download/extract
 if compgen -G "${DESKTOP}/FreedomStudio*" > /dev/null; then
-  echo "[setup] FreedomStudio already present. Skipping download."
+  echo "[setup] FreedomStudio appears to be present in ${DESKTOP}; skipping download."
   exit 0
 fi
 
-echo "[setup] Downloading FreedomStudio..."
+echo "[setup] Downloading FreedomStudio payload to ${ARCHIVE} ..."
 wget -q --show-progress -O "$ARCHIVE" "$URL"
 
-echo "[setup] Extracting FreedomStudio..."
+echo "[setup] Extracting into ${DESKTOP} ..."
 tar -xzf "$ARCHIVE" -C "$DESKTOP"
 
-echo "[setup] Cleaning up..."
+echo "[setup] Cleaning up archive ..."
 rm -f "$ARCHIVE"
 
+# Final ownership fix (harmless if already correct)
+echo "[setup] Fixing ownership ..."
 chown -R vscode:vscode "$DESKTOP"
-echo "[VSD RISCV EDGE AI CODESPACE setup] FreedomStudio ready on Desktop."
+
+echo "[setup] Done. You can find FreedomStudio under ${DESKTOP}."
+echo "[setup] noVNC desktop will be available at https://localhost:6080/"
