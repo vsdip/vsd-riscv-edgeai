@@ -1,21 +1,18 @@
 {
-  "name": "OpenLane Codespace (GUI + noVNC)",
+  "name": "RISC-V Edge AI Workshop",
   "build": { "dockerfile": "Dockerfile" },
-
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
-    }
+    "ghcr.io/devcontainers/features/docker-in-docker:2": { "version": "latest" }
   },
-
   "forwardPorts": [6080],
   "portsAttributes": {
-    "6080": { "label": "noVNC (Magic) Desktop", "onAutoForward": "openBrowser" }
+    "6080": {
+      "label": "noVNC (Magic) Desktop",
+      "onAutoForward": "openBrowser"
+    }
   },
-
   "overrideCommand": false,
   "remoteUser": "vscode",
   "containerEnv": { "DISPLAY": ":1" },
-
   "postCreateCommand": "bash .devcontainer/setup.sh"
 }
