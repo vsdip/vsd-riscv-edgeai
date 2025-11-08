@@ -7,7 +7,7 @@
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
-      "label": "noVNC (Magic) Desktop",
+      "label": "noVNC RISCV EDGE AI Desktop",
       "onAutoForward": "openBrowser"
     }
   },
