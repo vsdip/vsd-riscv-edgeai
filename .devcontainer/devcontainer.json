@@ -1,10 +1,13 @@
 {
-  "name": "VSD RISC-V EdgeAI Codespace",
+  "name": "OpenLane Codespace (GUI + noVNC)",
   "build": { "dockerfile": "Dockerfile" },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": { "version": "latest" }
+  },
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
-      "label": "noVNC Desktop",
+      "label": "noVNC (Magic) Desktop",
       "onAutoForward": "openBrowser"
     }
   },
