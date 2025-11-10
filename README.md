@@ -72,7 +72,7 @@ This opens the main Eclipse-based IDE interface for RISC-V software development.
 
 Inside the IDE:
 
-1. Go to **File → Import → Existing Projects into Workspace**.
+1. Go to **Sifive Tools -> Create Software Example Project -> Create a new Validation Project**.
 2. Select any example RISC-V or Edge-AI project folder.
 3. Build using the hammer icon or by pressing `Ctrl+B`.
 4. Run and debug using **QEMU** for software-level testing.
